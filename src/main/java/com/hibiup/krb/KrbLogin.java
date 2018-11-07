@@ -1,16 +1,14 @@
-package com.hibiup;
+package com.hibiup.krb;
 
 import com.sun.security.auth.callback.TextCallbackHandler;
-import junit.framework.TestCase;
-import org.junit.Test;
 
-import javax.security.auth.login.*;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
 import java.security.Principal;
 import java.util.Set;
 
-public class JaasTestCases extends TestCase {
-    @Test
-    public void testKerberos() {
+public class KrbLogin {
+    public static void main(String args[]) {
         try {
             LoginContext lc = new LoginContext("Sample", new TextCallbackHandler());
             // attempt authentication
@@ -30,5 +28,6 @@ public class JaasTestCases extends TestCase {
         catch(Exception e){
             e.printStackTrace();
         }
+
     }
 }
